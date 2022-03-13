@@ -1,35 +1,38 @@
+import {Words} from "./words.js"
+import {BaseField, Field} from "./field.js"
 
 
 
+// −− GET WORDS −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+const words = new Words()
+await words.init()
 
 
-try {
-    // const response = await fetch(url);
-    const response = await fetch(url);
-
-    if (!response.ok) {
-            throw new Error(`Erreur HTTP ! statut : ${response.status}`);
-    }
-
-    const data = await response.json();
-    // return data;
+// −− FIELDS −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+const word = new BaseField('word')
+const translation = new Field('translation', 'Traduction')
+const synonym = new Field('synonym', 'Synonyme')
+const context = new Field('context', 'Contexte')
+const comment = new Field('comment', 'Commentaire')
 
 
-    console.log(data)
-
-
-
-
-} catch (error)	{
-    console.log(error);
-    Dom.addElemWithText('p', "Echec de la connexion à l'API", this._container, "error");
-    throw new Error(`Erreur fetch ! statut : ${error}`);
+// −− SET WORD CLICK EVENT  −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+let f = function showAll(){
+    translation.showText()
+    synonym.showText()
+    context.showText()
+    comment.showText()
 }
 
+word.setEvent(f)
 
 
+// −− TEST −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+const newWord = words.random()
+console.log(newWord)
 
-
-
-
-
+word.setText(newWord[0])
+translation.setText(newWord[1])
+synonym.setText(newWord[2])
+context.setText(newWord[3])
+comment.setText(newWord[4])

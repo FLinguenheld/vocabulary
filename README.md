@@ -21,3 +21,8 @@ Raccourcis pour brave :
 
 firefox :
 >Ctrl + shift + m
+
+#### 3. Apache
+>https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04-fr
+
+

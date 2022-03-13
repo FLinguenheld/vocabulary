@@ -37,15 +37,15 @@ function next(){
     const newWord = words.random()
 
     if (englishToFrench){
-        word.setText(newWord[0])
-        translation.setText(newWord[1])
+        word.saveText(newWord[0])
+        translation.saveText(newWord[1])
     }else{
-        word.setText(newWord[1])
-        translation.setText(newWord[0])
+        word.saveText(newWord[1])
+        translation.saveText(newWord[0])
     }
-    synonym.setText(newWord[2])
-    context.setText(newWord[3])
-    comment.setText(newWord[4])
+    synonym.saveText(newWord[2])
+    context.saveText(newWord[3])
+    comment.saveText(newWord[4])
 }
 
 const btNext = document.getElementById('next')

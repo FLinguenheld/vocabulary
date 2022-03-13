@@ -31,7 +31,11 @@ p{
     background-color: #FFC2B5;
 	/* cursor: normal; */
 }
-
+.empty{
+    color: #808080;
+    background-color: #000;
+    font-style: oblique 50deg;
+}
 
 /* −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
 @media all and (min-width: 1000px){

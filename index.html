@@ -4,18 +4,24 @@
         <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="style/general.css" />
+        <link rel="stylesheet" href="style/field.css" />
+        <link rel="stylesheet" href="style/button.css" />
         <script type="module" src="/javascript/main.js" ></script>
 		<link rel="icon" type="image/png" href="favicon.png" />
 
         <title>Vocabulary</title>
     </head>
 	<body>
-		<div id="word"></div>
-		<div id="translation" class="help"></div>
-		<div id="synonym" class="help"></div>
-		<div id="context" class="help"></div>
-		<div id="comment" class="help"></div>
-		<button id="next"></button>
-
+        <div class="containerField">
+            <div id="word" class="field"></div>
+            <div id="translation" class="field"></div>
+            <div id="synonym" class="field"></div>
+            <div id="context" class="field"></div>
+            <div id="comment" class="field"></div>
+        </div>
+        <div class="containerButton">
+            <button id="reverse">Invert</button>
+            <button id="next">Next</button>
+        </div>
 	</body>
 </html>

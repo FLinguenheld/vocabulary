@@ -1,0 +1,46 @@
+html, body {
+    background-color: #000;
+    color: #000;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 2em;
+}
+
+.error{
+    text-align: center;
+}
+
+
+/* −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+
+@media all and (min-width: 1000px){
+
+    .error{
+        font-size: 1.6em;
+    }
+}
+
+@media all and (max-width: 1000px) and (min-width: 800px){
+
+    .error{
+        font-size: 1.4em;
+    }
+}
+
+@media all and (max-width: 800px) and (min-width: 600px){
+
+    .error{
+        font-size: 1.2em;
+    }
+}
+
+@media all and (max-width: 600px){
+
+    .error{
+        font-size: 1.0em;
+    }
+}

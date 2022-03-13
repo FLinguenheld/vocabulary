@@ -1,0 +1,47 @@
+.containerButton{
+    display: flex;
+}
+
+button{
+    justify-content: center;
+    margin: 2em 0.5em;
+    padding: 0.5em;
+	cursor: pointer;
+}
+
+#reverse{
+    flex:1
+}
+#next{
+    flex:3
+}
+
+
+/* −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+@media all and (min-width: 1000px){
+
+    button{
+        font-size: 1.6em;
+    }
+}
+
+@media all and (max-width: 1000px) and (min-width: 800px){
+
+    button{
+        font-size: 1.4em;
+    }
+}
+
+@media all and (max-width: 800px) and (min-width: 600px){
+
+    button{
+        font-size: 1.2em;
+    }
+}
+
+@media all and (max-width: 600px){
+
+    button{
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,66 @@
+
+.containerField{
+    display: flex;
+    flex-direction: column;
+}
+.field{
+    justify-content: center;
+    margin: 0.5em;
+    padding: 0px;
+}
+
+p{
+    text-align: center;
+}
+
+#word{
+    font-style: normal;
+    font-weight: bold;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.waiting{
+    background-color: #BFFFBB;
+	cursor: pointer;
+    font-style: oblique 50deg;
+}
+.waiting:hover{
+    background-color: #9ED3E8;
+	cursor: pointer;
+}
+.clicked{
+    background-color: #FFC2B5;
+	/* cursor: normal; */
+}
+
+
+/* −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+@media all and (min-width: 1000px){
+
+    p{
+        font-size: 1.6em;
+    }
+}
+
+@media all and (max-width: 1000px) and (min-width: 800px){
+
+    p{
+        font-size: 1.4em;
+    }
+}
+
+@media all and (max-width: 800px) and (min-width: 600px){
+
+    p{
+        font-size: 1.2em;
+    }
+}
+
+@media all and (max-width: 600px){
+
+    p{
+        font-size: 1.0em;
+    }
+}

@@ -15,11 +15,11 @@ const comment = new Field('comment', 'Comment')
 
 // −− SET WORD CLICK EVENT  −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 word.setEvent(function showAll(){
-    word.showText(true)
-    translation.showText(true)
-    synonym.showText(true)
-    context.showText(true)
-    comment.showText(true)
+    word.showText()
+    translation.showText()
+    synonym.showText()
+    context.showText()
+    comment.showText()
 })
 
 // −− BT REVERSE −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−

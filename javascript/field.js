@@ -21,7 +21,11 @@ export class BaseField{
     /* Saves the new text and shows */
     saveText(text){
         this._text = text
-        this.showText()
+
+        // It doesn't use showText to put waiting (the text has to be filled in the csv file)
+        Dom.clearContainer(this._container)
+        Dom.addElemWithText('p', this._text, this._container)
+        this.setWaiting()
     }
 
     /* Displays the text value.

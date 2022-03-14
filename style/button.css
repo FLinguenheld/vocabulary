@@ -12,8 +12,14 @@ button{
 #reverse{
     flex:1
 }
+#list{
+    flex:1
+}
+#history{
+    flex:1
+}
 #next{
-    flex:3
+    flex:5
 }
 
 

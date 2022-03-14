@@ -1,5 +1,6 @@
 import {Words} from "./words.js"
 import {BaseField, Field} from "./field.js"
+import {Modal} from "./modal.js"
 
 
 // −− GET WORDS −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
@@ -31,27 +32,51 @@ btReverse.addEventListener('click', () => {
                                           }
                           )
 
-// −− BT NEXT −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
-function next(){
-
-    const newWord = words.random()
-
-    if (englishToFrench){
-        word.saveText(newWord[0])
-        translation.saveText(newWord[1])
-    }else{
-        word.saveText(newWord[1])
-        translation.saveText(newWord[0])
-    }
-    synonym.saveText(newWord[2])
-    context.saveText(newWord[3])
-    comment.saveText(newWord[4])
-}
-
+// −− NEXT −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 const btNext = document.getElementById('next')
 btNext.addEventListener('click', () => {
-                next()
+                next(words.random()) 
+                })
+
+/* Update all fields with the word w*/
+function next(w){
+
+    if (englishToFrench){
+            word.saveText(w[0])
+            translation.saveText(w[1])
+        }else{
+            word.saveText(w[1])
+            translation.saveText(w[0])
+        }
+        synonym.saveText(w[2])
+        context.saveText(w[3])
+        comment.saveText(w[4])
+}
+
+// −− MODAL −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+/* Closes the modal and launches next
+ * This function is used by Modal class */
+function setNext(t){
+    Modal.close()
+    next(t)
+}
+
+/* Allows to close modal by a click outside the modal */
+Modal.addEventCloseDetails()
+
+// −− BT LIST −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+const btList = document.getElementById('list')
+btList.addEventListener('click', () => {
+                const myList = new Modal();
+                myList.show(words.list(), setNext);
+                })
+
+// −− BT HISTORY −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+const btHistory = document.getElementById('history')
+btHistory.addEventListener('click', () => {
+                const myHistory = new Modal();
+                myHistory.show(words.history(), setNext);
                 })
 
 // −− FIRST −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
-next()
+next(words.random())

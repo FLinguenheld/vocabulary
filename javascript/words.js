@@ -12,9 +12,13 @@ import {Dom} from "./dom.js"
 *  Launch init() one time and use random() to generate a new words */
 export class Words{
     #words
+    #previous
+    #history
 
     constructor(){
         this.#words = []
+        this.#previous = []
+        this.#history = []
     }
 
     async init(){
@@ -33,6 +37,9 @@ export class Words{
               this.#words[i-1] = lines[i].split(",")
             }
 
+            // Sorts for the method list
+            this.#words.sort((a, b)=> a[0].localeCompare(b[0]))
+
         } catch (error)	{
             console.log(error)
             Dom.addElemWithText('p', "Echec de la connexion au site", this._container, "error");
@@ -40,8 +47,40 @@ export class Words{
         }
     }
 
+    /* Returns a random word (a word is an array with all fields)
+     * Save the history in this.#history */
     random(){
-        const i = Math.floor(Math.random() * this.#words.length)
-        return this.#words[i]
+    
+        while(true){
+
+            const i = Math.floor(Math.random() * this.#words.length)
+
+            // Check if already worked
+            if (this.#previous.includes(i)){
+                if (this.#previous.length >= this.#words.length){
+                    this.#previous = []
+                }
+            }else{
+                this.#previous.push(i)
+
+                // Save history
+                if (!this.#history.includes(this.#words[i])){
+                    this.#history.push(this.#words[i])
+                }
+
+                return this.#words[i]
+            }
+        }
+    }
+
+    /* Returns the history array */
+    history(){
+        this.#history.sort((a, b)=> a[0].localeCompare(b[0]))
+        return this.#history
+    }
+
+    /* Returns the full list array */
+    list(){
+        return this.#words
     }
 }

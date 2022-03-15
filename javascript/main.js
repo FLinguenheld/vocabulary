@@ -29,8 +29,13 @@ let englishToFrench = true
 const btReverse = document.getElementById('reverse')
 btReverse.addEventListener('click', () => {
                                     englishToFrench = !englishToFrench
-                                          }
-                          )
+
+                                    if (!englishToFrench){
+                                        btReverse.classList.add('reverseOn')
+                                    }else{
+                                        btReverse.classList.remove('reverseOn')
+                                    }
+                                })
 
 // −− NEXT −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 const btNext = document.getElementById('next')

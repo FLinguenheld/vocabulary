@@ -1,4 +1,3 @@
-
 .containerField{
     display: flex;
     flex-direction: column;
@@ -19,17 +18,16 @@ p{
 }
 
 .waiting{
-    background-color: #BFFFBB;
+    background-color: #BDF799;
 	cursor: pointer;
     font-style: oblique 50deg;
 }
 .waiting:hover{
-    background-color: #9ED3E8;
+    background-color: #99E096;
 	cursor: pointer;
 }
 .clicked{
-    background-color: #FFC2B5;
-	/* cursor: normal; */
+    background-color: #80DBE0;
 }
 .empty{
     color: #808080;

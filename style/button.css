@@ -3,32 +3,48 @@
 }
 
 button{
-    background-color: #E8D89E;
+    background-color: #F7E499;
     justify-content: center;
     padding: 0.5em;
+    margin: 0.2em;
 	cursor: pointer;
 }
-
-#reverse{
-    flex:1
-}
-#list{
-    flex:1
-}
-#history{
-    flex:1
-}
-#next{
-    flex:5
+button:hover{
+    background-color: #E0C380;
 }
 
+.containerButtonLeft{
+    display: flex;
+    flex-direction: column;
+    flex:1
+}
+.containerButtonRight{
+    display: flex;
+    flex:3
+}
+.containerBt2{
+    display: flex;
+}
+
+#next, #list{
+    width: 100%;
+}
+
+.reverseOn{
+    background-color: #80DBE0;
+}
 
 /* −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
 @media all and (min-width: 1000px){
 
     button{
         font-size: 1.6em;
-        margin: 2em 0.5em;
+    }
+    #next{
+        font-size: 2em;
+    }
+    .containerButton{
+        margin: 1.8em 0.5em;
     }
 }
 
@@ -36,6 +52,11 @@ button{
 
     button{
         font-size: 1.4em;
+    }
+    #next{
+        font-size: 1.8em;
+    }
+    .containerButton{
         margin: 1.6em 0.5em;
     }
 }
@@ -44,6 +65,11 @@ button{
 
     button{
         font-size: 1.2em;
+    }
+    #next{
+        font-size: 1.4em;
+    }
+    .containerButton{
         margin: 1.2em 0.5em;
     }
 }
@@ -52,6 +78,11 @@ button{
 
     button{
         font-size: 1em;
+    }
+    #next{
+        font-size: 1.2em;
+    }
+    .containerButton{
         margin: 0.8em 0.5em;
     }
 }
